@@ -1,0 +1,65 @@
+import 'package:firebase_data_connect/firebase_data_connect.dart';
+import 'package:firebase_playground/dataconnect-generated/dart/default_connector/default.dart';
+import 'package:firebase_playground/navbar.dart';
+import 'package:flutter/material.dart';
+
+class UserPage extends StatelessWidget {
+  const UserPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return UserListFetcher();
+  }
+}
+
+class UserListFetcher extends StatelessWidget {
+  const UserListFetcher({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    Future<QueryResult<GetUsersData, void>> userFuture =
+        DefaultConnector.instance.getUsers().execute();
+    return Scaffold(
+      bottomNavigationBar: NavBar(),
+      body: FutureBuilder<QueryResult<GetUsersData, void>>(
+        future: userFuture,
+        builder: (
+          BuildContext context,
+          AsyncSnapshot<QueryResult<GetUsersData, void>> snapshot,
+        ) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Center(child: CircularProgressIndicator());
+          } else if (snapshot.hasData) {
+            var users = snapshot.data!.data.users;
+            return UserList(users: users);
+          } else {
+            return Text("Failed to load users");
+          }
+        },
+      ),
+    );
+  }
+}
+
+class UserList extends StatelessWidget {
+  final List<GetUsersUsers> users;
+
+  const UserList({super.key, required this.users});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: users.length,
+      itemBuilder: (BuildContext context, int idx) {
+        var user = users[idx];
+        return Material(
+          child: ListTile(
+            title: Text(user.displayName),
+            subtitle: Text(user.email ?? ""),
+            leading: Icon(Icons.person),
+          ),
+        );
+      },
+    );
+  }
+}
