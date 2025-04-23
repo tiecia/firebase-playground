@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "224665283154",
+    "project_id": "fir-playground-fd073",
+    "storage_bucket": "fir-playground-fd073.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:224665283154:android:8c3e65c03557994c434d8b",
+        "android_client_info": {
+          "package_name": "com.example.firebase_playground"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDn9qs_piMVJ737oE06YVrJon8G6tbXDXc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
