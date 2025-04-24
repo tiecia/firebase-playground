@@ -1,0 +1,43 @@
+type User @table {
+  displayName: String!
+  email: String
+  photoUrl: String
+  createdAt: Timestamp!
+}
+
+type Event @table {
+  creator: User!
+  title: String!
+  description: String
+  startTime: Timestamp!
+  endTime: Timestamp!
+  location: String
+  isRecurring: Boolean!
+  isRegisterable: Boolean!
+  maxRegistrants: Int
+  createdAt: Timestamp!
+}
+
+type RecurringEvent @table {
+  event: Event!
+  frequency: String!
+  interval: Int!
+  daysOfWeek: [String]
+  dayOfMonth: Int
+  monthOfYear: Int
+  endDate: Timestamp
+}
+
+type EventInstance @table {
+  event: Event!
+  startTime: Timestamp!
+  endTime: Timestamp!
+}
+
+type Registration @table {
+  user: User!
+  eventInstance: EventInstance!
+  registrationDate: Date!
+  createdAt: Timestamp!
+  waitlist: Boolean
+}

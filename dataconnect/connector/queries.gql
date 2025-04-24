@@ -1,0 +1,8 @@
+query GetUsers @auth(level: PUBLIC) {
+  users{
+    displayName
+    email
+    photoUrl
+    createdAt
+  }
+}

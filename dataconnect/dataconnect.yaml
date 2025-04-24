@@ -1,0 +1,12 @@
+specVersion: "v1"
+serviceId: "fir-playground-fd073-service"
+location: "us-west1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fir-playground-fd073-database"
+      cloudSql:
+        instanceId: "fir-playground-fd073-instance"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]
