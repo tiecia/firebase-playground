@@ -44,18 +44,25 @@ class UserList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: users.length,
-      itemBuilder: (BuildContext context, int idx) {
-        var user = users[idx];
-        return Material(
-          child: ListTile(
-            title: Text(user.displayName),
-            subtitle: Text(user.email ?? ""),
-            leading: Icon(Icons.person),
-          ),
-        );
-      },
+    return Scaffold(
+      appBar: AppBar(title: Text('Users')),
+      body: Container(
+        color: Theme.of(context).colorScheme.surface,
+        child: ListView.builder(
+          itemCount: users.length,
+          itemBuilder: (BuildContext context, int idx) {
+            var user = users[idx];
+            return Material(
+              child: ListTile(
+                title: Text(user.displayName),
+                subtitle: Text(user.email ?? ""),
+                leading: Icon(Icons.person),
+                onTap: () => print("User: $idx"),
+              ),
+            );
+          },
+        ),
+      ),
     );
   }
 }
