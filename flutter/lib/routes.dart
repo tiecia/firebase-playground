@@ -6,7 +6,7 @@ import 'package:go_router/go_router.dart';
 
 var appRoutes = {
   '/': (context) => HomePage(),
-  '/users': (context) => UserPage(),
+  '/users': (context) => UserListPage(),
 };
 
 final GoRouter router = GoRouter(
@@ -25,7 +25,17 @@ final GoRouter router = GoRouter(
         ),
         StatefulShellBranch(
           routes: [
-            GoRoute(path: '/users', builder: (context, state) => UserPage()),
+            GoRoute(
+              path: '/users',
+              builder: (context, state) {
+                var id = state..pathParameters['id'];
+                if (id == null) {
+                  return UserListPage();
+                } else {
+                  return UserPage(userId: id);
+                }
+              },
+            ),
           ],
         ),
       ],

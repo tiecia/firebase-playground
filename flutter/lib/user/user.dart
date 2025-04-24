@@ -1,9 +1,10 @@
 import 'package:firebase_data_connect/firebase_data_connect.dart';
 import 'package:firebase_playground/dataconnect-generated/dart/default_connector/default.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-class UserPage extends StatelessWidget {
-  const UserPage({super.key});
+class UserListPage extends StatelessWidget {
+  const UserListPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -57,12 +58,28 @@ class UserList extends StatelessWidget {
                 title: Text(user.displayName),
                 subtitle: Text(user.email ?? ""),
                 leading: Icon(Icons.person),
-                onTap: () => print("User: $idx"),
+                onTap:
+                    () => context.go(
+                      Uri(
+                        path: '/users',
+                        queryParameters: {'id': 'id'},
+                      ).toString(),
+                    ),
               ),
             );
           },
         ),
       ),
     );
+  }
+}
+
+class UserPage extends StatelessWidget {
+  final String userId;
+  const UserPage({super.key, required this.userId});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }
