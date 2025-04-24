@@ -1,4 +1,3 @@
-import 'package:firebase_playground/navbar.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -6,6 +5,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(bottomNavigationBar: NavBar(), body: Placeholder(),);
+    return Scaffold(appBar: AppBar(title: Text("Home")), body: Placeholder(),);
   }
 }

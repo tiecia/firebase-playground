@@ -1,6 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_playground/firebase_options.dart';
-import 'package:firebase_playground/user/user.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_playground/routes.dart';
 
@@ -28,7 +27,7 @@ class MyApp extends StatelessWidget {
               textDirection: TextDirection.ltr,
             );
           } else {
-            return MaterialApp(routes: appRoutes);
+            return MaterialApp.router(routerConfig: router);
           }
         },
       ),

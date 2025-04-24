@@ -1,25 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class NavBar extends StatelessWidget {
-  const NavBar({super.key});
+  final int selectedIndex;
+  final StatefulNavigationShell navigationShell;
+  const NavBar({
+    super.key,
+    required this.selectedIndex,
+    required this.navigationShell,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-        BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Users'),
+    return NavigationBar(
+      destinations: [
+        NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
+        NavigationDestination(icon: Icon(Icons.person), label: 'Users'),
       ],
-      onTap: (int idx) {
-        switch (idx) {
-          case 0:
-            Navigator.pushNamed(context, "/");
-            break;
-          case 1:
-            Navigator.pushNamed(context, "/users");
-            break;
-          default:
-        }
+      selectedIndex: selectedIndex,
+      onDestinationSelected: (int idx) {
+        // switch (idx) {
+        //   case 0:
+        //     Navigator.pushNamed(context, "/");
+        //     break;
+        //   case 1:
+        //     Navigator.pushNamed(context, "/users");
+        //     break;
+        //   default:
+        // }
+        navigationShell.goBranch(idx);
       },
     );
   }
