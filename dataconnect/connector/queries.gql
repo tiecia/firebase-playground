@@ -1,5 +1,6 @@
 query GetUsers @auth(level: PUBLIC) {
   users{
+    userId
     displayName
     email
     photoUrl

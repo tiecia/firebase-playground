@@ -1,4 +1,5 @@
 type User @table {
+  userId: UUID! @unique
   displayName: String!
   email: String
   photoUrl: String
