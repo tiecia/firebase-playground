@@ -62,7 +62,7 @@ class UserList extends StatelessWidget {
                     () => context.go(
                       Uri(
                         path: '/users',
-                        queryParameters: {'id': 'id'},
+                        queryParameters: {'id': user.userId},
                       ).toString(),
                     ),
               ),

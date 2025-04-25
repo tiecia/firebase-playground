@@ -17,15 +17,17 @@ class GetUsersVariablesBuilder {
 }
 
 class GetUsersUsers {
+  String userId;
   String displayName;
   String? email;
   String? photoUrl;
   Timestamp createdAt;
   GetUsersUsers.fromJson(dynamic json):
-  displayName = nativeFromJson<String>(json['displayName']),email = json['email'] == null ? null : nativeFromJson<String>(json['email']),photoUrl = json['photoUrl'] == null ? null : nativeFromJson<String>(json['photoUrl']),createdAt = Timestamp.fromJson(json['createdAt']);
+  userId = nativeFromJson<String>(json['userId']),displayName = nativeFromJson<String>(json['displayName']),email = json['email'] == null ? null : nativeFromJson<String>(json['email']),photoUrl = json['photoUrl'] == null ? null : nativeFromJson<String>(json['photoUrl']),createdAt = Timestamp.fromJson(json['createdAt']);
 
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {};
+    json['userId'] = nativeToJson<String>(userId);
     json['displayName'] = nativeToJson<String>(displayName);
     if (email != null) {
       json['email'] = nativeToJson<String?>(email);
@@ -38,6 +40,7 @@ class GetUsersUsers {
   }
 
   GetUsersUsers({
+    required this.userId,
     required this.displayName,
     this.email,
     this.photoUrl,
