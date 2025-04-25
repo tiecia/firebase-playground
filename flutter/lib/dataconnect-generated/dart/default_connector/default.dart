@@ -4,6 +4,8 @@ import 'dart:convert';
 
 part 'get_users.dart';
 
+part 'get_user.dart';
+
 
 
 
@@ -15,6 +17,11 @@ class DefaultConnector {
   
   GetUsersVariablesBuilder getUsers () {
     return GetUsersVariablesBuilder(dataConnect, );
+  }
+  
+  
+  GetUserVariablesBuilder getUser ({required String userId, }) {
+    return GetUserVariablesBuilder(dataConnect, userId: userId,);
   }
   
 

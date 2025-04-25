@@ -1,0 +1,1481 @@
+"""
+✨ `Event_KeyOutput` returns the primary key fields of table type `Event`.
+
+It has the same format as `Event_Key`, but is only used as mutation return value.
+"""
+scalar Event_KeyOutput
+"""
+✨ `EventInstance_KeyOutput` returns the primary key fields of table type `EventInstance`.
+
+It has the same format as `EventInstance_Key`, but is only used as mutation return value.
+"""
+scalar EventInstance_KeyOutput
+"""
+✨ `RecurringEvent_KeyOutput` returns the primary key fields of table type `RecurringEvent`.
+
+It has the same format as `RecurringEvent_Key`, but is only used as mutation return value.
+"""
+scalar RecurringEvent_KeyOutput
+"""
+✨ `Registration_KeyOutput` returns the primary key fields of table type `Registration`.
+
+It has the same format as `Registration_Key`, but is only used as mutation return value.
+"""
+scalar Registration_KeyOutput
+"""
+✨ `User_KeyOutput` returns the primary key fields of table type `User`.
+
+It has the same format as `User_Key`, but is only used as mutation return value.
+"""
+scalar User_KeyOutput
+"""
+✨ Generated data input type for table 'Event'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input Event_Data {
+  """
+  ✨ Generated from Field `Event`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Event`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Event`.`creatorId` of type `UUID!`
+  """
+  creatorId: UUID
+  """
+  ✨ `_expr` server value variant of `creatorId` (✨ Generated from Field `Event`.`creatorId` of type `UUID!`)
+  """
+  creatorId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Event`.`creator` of type `User!`
+  """
+  creator: User_Key
+  """
+  ✨ Generated from Field `Event`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `Event`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `Event`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `Event`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `Event`.`description` of type `String`
+  """
+  description: String
+  """
+  ✨ `_expr` server value variant of `description` (✨ Generated from Field `Event`.`description` of type `String`)
+  """
+  description_expr: String_Expr
+  """
+  ✨ Generated from Field `Event`.`endTime` of type `Timestamp!`
+  """
+  endTime: Timestamp
+  """
+  ✨ `_expr` server value variant of `endTime` (✨ Generated from Field `Event`.`endTime` of type `Timestamp!`)
+  """
+  endTime_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `endTime` (✨ Generated from Field `Event`.`endTime` of type `Timestamp!`)
+  """
+  endTime_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `endTime` (✨ Generated from Field `Event`.`endTime` of type `Timestamp!`)
+  """
+  endTime_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `Event`.`isRecurring` of type `Boolean!`
+  """
+  isRecurring: Boolean
+  """
+  ✨ `_expr` server value variant of `isRecurring` (✨ Generated from Field `Event`.`isRecurring` of type `Boolean!`)
+  """
+  isRecurring_expr: Boolean_Expr
+  """
+  ✨ Generated from Field `Event`.`isRegisterable` of type `Boolean!`
+  """
+  isRegisterable: Boolean
+  """
+  ✨ `_expr` server value variant of `isRegisterable` (✨ Generated from Field `Event`.`isRegisterable` of type `Boolean!`)
+  """
+  isRegisterable_expr: Boolean_Expr
+  """
+  ✨ Generated from Field `Event`.`location` of type `String`
+  """
+  location: String
+  """
+  ✨ `_expr` server value variant of `location` (✨ Generated from Field `Event`.`location` of type `String`)
+  """
+  location_expr: String_Expr
+  """
+  ✨ Generated from Field `Event`.`maxRegistrants` of type `Int`
+  """
+  maxRegistrants: Int
+  """
+  ✨ `_expr` server value variant of `maxRegistrants` (✨ Generated from Field `Event`.`maxRegistrants` of type `Int`)
+  """
+  maxRegistrants_expr: Int_Expr
+  """
+  ✨ `_update` server value variant of `maxRegistrants` (✨ Generated from Field `Event`.`maxRegistrants` of type `Int`)
+  """
+  maxRegistrants_update: [Int_Update!]
+  """
+  ✨ Generated from Field `Event`.`startTime` of type `Timestamp!`
+  """
+  startTime: Timestamp
+  """
+  ✨ `_expr` server value variant of `startTime` (✨ Generated from Field `Event`.`startTime` of type `Timestamp!`)
+  """
+  startTime_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `startTime` (✨ Generated from Field `Event`.`startTime` of type `Timestamp!`)
+  """
+  startTime_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `startTime` (✨ Generated from Field `Event`.`startTime` of type `Timestamp!`)
+  """
+  startTime_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `Event`.`title` of type `String!`
+  """
+  title: String
+  """
+  ✨ `_expr` server value variant of `title` (✨ Generated from Field `Event`.`title` of type `String!`)
+  """
+  title_expr: String_Expr
+}
+"""
+✨ Generated filter input type for table 'Event'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Event_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [Event_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: Event_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [Event_Filter!]
+  """
+  ✨ Generated from Field `Event`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `Event`.`creatorId` of type `UUID!`
+  """
+  creatorId: UUID_Filter
+  """
+  ✨ Generated from Field `Event`.`creator` of type `User!`
+  """
+  creator: User_Filter
+  """
+  ✨ Generated from Field `Event`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `Event`.`description` of type `String`
+  """
+  description: String_Filter
+  """
+  ✨ Generated from Field `Event`.`endTime` of type `Timestamp!`
+  """
+  endTime: Timestamp_Filter
+  """
+  ✨ Generated from Field `Event`.`isRecurring` of type `Boolean!`
+  """
+  isRecurring: Boolean_Filter
+  """
+  ✨ Generated from Field `Event`.`isRegisterable` of type `Boolean!`
+  """
+  isRegisterable: Boolean_Filter
+  """
+  ✨ Generated from Field `Event`.`location` of type `String`
+  """
+  location: String_Filter
+  """
+  ✨ Generated from Field `Event`.`maxRegistrants` of type `Int`
+  """
+  maxRegistrants: Int_Filter
+  """
+  ✨ Generated from Field `Event`.`startTime` of type `Timestamp!`
+  """
+  startTime: Timestamp_Filter
+  """
+  ✨ Generated from Field `Event`.`title` of type `String!`
+  """
+  title: String_Filter
+  """
+  ✨ Generated from Field `Event`.`eventInstances_on_event` of type `[EventInstance!]!`
+  """
+  eventInstances_on_event: EventInstance_ListFilter
+  """
+  ✨ Generated from Field `Event`.`recurringEvents_on_event` of type `[RecurringEvent!]!`
+  """
+  recurringEvents_on_event: RecurringEvent_ListFilter
+}
+"""
+✨ Generated first-row input type for table 'Event'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input Event_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [Event_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: Event_Filter
+}
+"""
+✨ Generated having input type for table 'Event'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Event_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [Event_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: Event_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [Event_Having!]
+  """
+  ✨ Generated from Field `Event`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `Event`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `Event`.`creatorId_count` of type `Int!`
+  """
+  creatorId_count: Int_Filter
+  """
+  ✨ Generated from Field `Event`.`description_count` of type `Int!`
+  """
+  description_count: Int_Filter
+  """
+  ✨ Generated from Field `Event`.`endTime_count` of type `Int!`
+  """
+  endTime_count: Int_Filter
+  """
+  ✨ Generated from Field `Event`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `Event`.`isRecurring_count` of type `Int!`
+  """
+  isRecurring_count: Int_Filter
+  """
+  ✨ Generated from Field `Event`.`isRegisterable_count` of type `Int!`
+  """
+  isRegisterable_count: Int_Filter
+  """
+  ✨ Generated from Field `Event`.`location_count` of type `Int!`
+  """
+  location_count: Int_Filter
+  """
+  ✨ Generated from Field `Event`.`maxRegistrants_count` of type `Int!`
+  """
+  maxRegistrants_count: Int_Filter
+  """
+  ✨ Generated from Field `Event`.`startTime_count` of type `Int!`
+  """
+  startTime_count: Int_Filter
+  """
+  ✨ Generated from Field `Event`.`title_count` of type `Int!`
+  """
+  title_count: Int_Filter
+  """
+  ✨ Generated from Field `Event`.`maxRegistrants_sum` of type `Int`
+  """
+  maxRegistrants_sum: Int_Filter
+  """
+  ✨ Generated from Field `Event`.`maxRegistrants_avg` of type `Float`
+  """
+  maxRegistrants_avg: Float_Filter
+  """
+  ✨ Generated from Field `Event`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `Event`.`endTime_min` of type `Timestamp`
+  """
+  endTime_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `Event`.`maxRegistrants_min` of type `Int`
+  """
+  maxRegistrants_min: Int_Filter
+  """
+  ✨ Generated from Field `Event`.`startTime_min` of type `Timestamp`
+  """
+  startTime_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `Event`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+  """
+  ✨ Generated from Field `Event`.`endTime_max` of type `Timestamp`
+  """
+  endTime_max: Timestamp_Filter
+  """
+  ✨ Generated from Field `Event`.`maxRegistrants_max` of type `Int`
+  """
+  maxRegistrants_max: Int_Filter
+  """
+  ✨ Generated from Field `Event`.`startTime_max` of type `Timestamp`
+  """
+  startTime_max: Timestamp_Filter
+}
+"""
+✨ Generated key input type for table 'Event'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input Event_Key {
+  """
+  ✨ Generated from Field `Event`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Event`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'Event'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input Event_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: Event_Filter
+}
+"""
+✨ Generated order input type for table 'Event'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input Event_Order {
+  """
+  ✨ Generated from Field `Event`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `Event`.`creatorId` of type `UUID!`
+  """
+  creatorId: OrderDirection
+  """
+  ✨ Generated from Field `Event`.`creator` of type `User!`
+  """
+  creator: User_Order
+  """
+  ✨ Generated from Field `Event`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `Event`.`description` of type `String`
+  """
+  description: OrderDirection
+  """
+  ✨ Generated from Field `Event`.`endTime` of type `Timestamp!`
+  """
+  endTime: OrderDirection
+  """
+  ✨ Generated from Field `Event`.`isRecurring` of type `Boolean!`
+  """
+  isRecurring: OrderDirection
+  """
+  ✨ Generated from Field `Event`.`isRegisterable` of type `Boolean!`
+  """
+  isRegisterable: OrderDirection
+  """
+  ✨ Generated from Field `Event`.`location` of type `String`
+  """
+  location: OrderDirection
+  """
+  ✨ Generated from Field `Event`.`maxRegistrants` of type `Int`
+  """
+  maxRegistrants: OrderDirection
+  """
+  ✨ Generated from Field `Event`.`startTime` of type `Timestamp!`
+  """
+  startTime: OrderDirection
+  """
+  ✨ Generated from Field `Event`.`title` of type `String!`
+  """
+  title: OrderDirection
+}
+"""
+✨ Generated data input type for table 'EventInstance'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input EventInstance_Data {
+  """
+  ✨ Generated from Field `EventInstance`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `EventInstance`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `EventInstance`.`eventId` of type `UUID!`
+  """
+  eventId: UUID
+  """
+  ✨ `_expr` server value variant of `eventId` (✨ Generated from Field `EventInstance`.`eventId` of type `UUID!`)
+  """
+  eventId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `EventInstance`.`event` of type `Event!`
+  """
+  event: Event_Key
+  """
+  ✨ Generated from Field `EventInstance`.`endTime` of type `Timestamp!`
+  """
+  endTime: Timestamp
+  """
+  ✨ `_expr` server value variant of `endTime` (✨ Generated from Field `EventInstance`.`endTime` of type `Timestamp!`)
+  """
+  endTime_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `endTime` (✨ Generated from Field `EventInstance`.`endTime` of type `Timestamp!`)
+  """
+  endTime_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `endTime` (✨ Generated from Field `EventInstance`.`endTime` of type `Timestamp!`)
+  """
+  endTime_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `EventInstance`.`startTime` of type `Timestamp!`
+  """
+  startTime: Timestamp
+  """
+  ✨ `_expr` server value variant of `startTime` (✨ Generated from Field `EventInstance`.`startTime` of type `Timestamp!`)
+  """
+  startTime_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `startTime` (✨ Generated from Field `EventInstance`.`startTime` of type `Timestamp!`)
+  """
+  startTime_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `startTime` (✨ Generated from Field `EventInstance`.`startTime` of type `Timestamp!`)
+  """
+  startTime_update: [Timestamp_Update!]
+}
+"""
+✨ Generated filter input type for table 'EventInstance'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input EventInstance_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [EventInstance_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: EventInstance_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [EventInstance_Filter!]
+  """
+  ✨ Generated from Field `EventInstance`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `EventInstance`.`eventId` of type `UUID!`
+  """
+  eventId: UUID_Filter
+  """
+  ✨ Generated from Field `EventInstance`.`event` of type `Event!`
+  """
+  event: Event_Filter
+  """
+  ✨ Generated from Field `EventInstance`.`endTime` of type `Timestamp!`
+  """
+  endTime: Timestamp_Filter
+  """
+  ✨ Generated from Field `EventInstance`.`startTime` of type `Timestamp!`
+  """
+  startTime: Timestamp_Filter
+  """
+  ✨ Generated from Field `EventInstance`.`registrations_on_eventInstance` of type `[Registration!]!`
+  """
+  registrations_on_eventInstance: Registration_ListFilter
+}
+"""
+✨ Generated first-row input type for table 'EventInstance'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input EventInstance_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [EventInstance_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: EventInstance_Filter
+}
+"""
+✨ Generated having input type for table 'EventInstance'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input EventInstance_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [EventInstance_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: EventInstance_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [EventInstance_Having!]
+  """
+  ✨ Generated from Field `EventInstance`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `EventInstance`.`endTime_count` of type `Int!`
+  """
+  endTime_count: Int_Filter
+  """
+  ✨ Generated from Field `EventInstance`.`eventId_count` of type `Int!`
+  """
+  eventId_count: Int_Filter
+  """
+  ✨ Generated from Field `EventInstance`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `EventInstance`.`startTime_count` of type `Int!`
+  """
+  startTime_count: Int_Filter
+  """
+  ✨ Generated from Field `EventInstance`.`endTime_min` of type `Timestamp`
+  """
+  endTime_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `EventInstance`.`startTime_min` of type `Timestamp`
+  """
+  startTime_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `EventInstance`.`endTime_max` of type `Timestamp`
+  """
+  endTime_max: Timestamp_Filter
+  """
+  ✨ Generated from Field `EventInstance`.`startTime_max` of type `Timestamp`
+  """
+  startTime_max: Timestamp_Filter
+}
+"""
+✨ Generated key input type for table 'EventInstance'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input EventInstance_Key {
+  """
+  ✨ Generated from Field `EventInstance`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `EventInstance`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'EventInstance'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input EventInstance_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: EventInstance_Filter
+}
+"""
+✨ Generated order input type for table 'EventInstance'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input EventInstance_Order {
+  """
+  ✨ Generated from Field `EventInstance`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `EventInstance`.`eventId` of type `UUID!`
+  """
+  eventId: OrderDirection
+  """
+  ✨ Generated from Field `EventInstance`.`event` of type `Event!`
+  """
+  event: Event_Order
+  """
+  ✨ Generated from Field `EventInstance`.`endTime` of type `Timestamp!`
+  """
+  endTime: OrderDirection
+  """
+  ✨ Generated from Field `EventInstance`.`startTime` of type `Timestamp!`
+  """
+  startTime: OrderDirection
+}
+"""
+✨ Generated data input type for table 'RecurringEvent'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input RecurringEvent_Data {
+  """
+  ✨ Generated from Field `RecurringEvent`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `RecurringEvent`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `RecurringEvent`.`eventId` of type `UUID!`
+  """
+  eventId: UUID
+  """
+  ✨ `_expr` server value variant of `eventId` (✨ Generated from Field `RecurringEvent`.`eventId` of type `UUID!`)
+  """
+  eventId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `RecurringEvent`.`event` of type `Event!`
+  """
+  event: Event_Key
+  """
+  ✨ Generated from Field `RecurringEvent`.`dayOfMonth` of type `Int`
+  """
+  dayOfMonth: Int
+  """
+  ✨ `_expr` server value variant of `dayOfMonth` (✨ Generated from Field `RecurringEvent`.`dayOfMonth` of type `Int`)
+  """
+  dayOfMonth_expr: Int_Expr
+  """
+  ✨ `_update` server value variant of `dayOfMonth` (✨ Generated from Field `RecurringEvent`.`dayOfMonth` of type `Int`)
+  """
+  dayOfMonth_update: [Int_Update!]
+  """
+  ✨ Generated from Field `RecurringEvent`.`daysOfWeek` of type `[String]`
+  """
+  daysOfWeek: [String!]
+  """
+  ✨ `_update` server value variant of `daysOfWeek` (✨ Generated from Field `RecurringEvent`.`daysOfWeek` of type `[String]`)
+  """
+  daysOfWeek_update: [String_ListUpdate!]
+  """
+  ✨ Generated from Field `RecurringEvent`.`endDate` of type `Timestamp`
+  """
+  endDate: Timestamp
+  """
+  ✨ `_expr` server value variant of `endDate` (✨ Generated from Field `RecurringEvent`.`endDate` of type `Timestamp`)
+  """
+  endDate_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `endDate` (✨ Generated from Field `RecurringEvent`.`endDate` of type `Timestamp`)
+  """
+  endDate_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `endDate` (✨ Generated from Field `RecurringEvent`.`endDate` of type `Timestamp`)
+  """
+  endDate_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `RecurringEvent`.`frequency` of type `String!`
+  """
+  frequency: String
+  """
+  ✨ `_expr` server value variant of `frequency` (✨ Generated from Field `RecurringEvent`.`frequency` of type `String!`)
+  """
+  frequency_expr: String_Expr
+  """
+  ✨ Generated from Field `RecurringEvent`.`interval` of type `Int!`
+  """
+  interval: Int
+  """
+  ✨ `_expr` server value variant of `interval` (✨ Generated from Field `RecurringEvent`.`interval` of type `Int!`)
+  """
+  interval_expr: Int_Expr
+  """
+  ✨ `_update` server value variant of `interval` (✨ Generated from Field `RecurringEvent`.`interval` of type `Int!`)
+  """
+  interval_update: [Int_Update!]
+  """
+  ✨ Generated from Field `RecurringEvent`.`monthOfYear` of type `Int`
+  """
+  monthOfYear: Int
+  """
+  ✨ `_expr` server value variant of `monthOfYear` (✨ Generated from Field `RecurringEvent`.`monthOfYear` of type `Int`)
+  """
+  monthOfYear_expr: Int_Expr
+  """
+  ✨ `_update` server value variant of `monthOfYear` (✨ Generated from Field `RecurringEvent`.`monthOfYear` of type `Int`)
+  """
+  monthOfYear_update: [Int_Update!]
+}
+"""
+✨ Generated filter input type for table 'RecurringEvent'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input RecurringEvent_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [RecurringEvent_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: RecurringEvent_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [RecurringEvent_Filter!]
+  """
+  ✨ Generated from Field `RecurringEvent`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`eventId` of type `UUID!`
+  """
+  eventId: UUID_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`event` of type `Event!`
+  """
+  event: Event_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`dayOfMonth` of type `Int`
+  """
+  dayOfMonth: Int_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`daysOfWeek` of type `[String]`
+  """
+  daysOfWeek: String_ListFilter
+  """
+  ✨ Generated from Field `RecurringEvent`.`endDate` of type `Timestamp`
+  """
+  endDate: Timestamp_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`frequency` of type `String!`
+  """
+  frequency: String_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`interval` of type `Int!`
+  """
+  interval: Int_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`monthOfYear` of type `Int`
+  """
+  monthOfYear: Int_Filter
+}
+"""
+✨ Generated first-row input type for table 'RecurringEvent'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input RecurringEvent_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [RecurringEvent_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: RecurringEvent_Filter
+}
+"""
+✨ Generated having input type for table 'RecurringEvent'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input RecurringEvent_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [RecurringEvent_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: RecurringEvent_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [RecurringEvent_Having!]
+  """
+  ✨ Generated from Field `RecurringEvent`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`dayOfMonth_count` of type `Int!`
+  """
+  dayOfMonth_count: Int_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`endDate_count` of type `Int!`
+  """
+  endDate_count: Int_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`eventId_count` of type `Int!`
+  """
+  eventId_count: Int_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`frequency_count` of type `Int!`
+  """
+  frequency_count: Int_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`interval_count` of type `Int!`
+  """
+  interval_count: Int_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`monthOfYear_count` of type `Int!`
+  """
+  monthOfYear_count: Int_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`dayOfMonth_sum` of type `Int`
+  """
+  dayOfMonth_sum: Int_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`interval_sum` of type `Int`
+  """
+  interval_sum: Int_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`monthOfYear_sum` of type `Int`
+  """
+  monthOfYear_sum: Int_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`dayOfMonth_avg` of type `Float`
+  """
+  dayOfMonth_avg: Float_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`interval_avg` of type `Float`
+  """
+  interval_avg: Float_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`monthOfYear_avg` of type `Float`
+  """
+  monthOfYear_avg: Float_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`dayOfMonth_min` of type `Int`
+  """
+  dayOfMonth_min: Int_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`endDate_min` of type `Timestamp`
+  """
+  endDate_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`interval_min` of type `Int`
+  """
+  interval_min: Int_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`monthOfYear_min` of type `Int`
+  """
+  monthOfYear_min: Int_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`dayOfMonth_max` of type `Int`
+  """
+  dayOfMonth_max: Int_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`endDate_max` of type `Timestamp`
+  """
+  endDate_max: Timestamp_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`interval_max` of type `Int`
+  """
+  interval_max: Int_Filter
+  """
+  ✨ Generated from Field `RecurringEvent`.`monthOfYear_max` of type `Int`
+  """
+  monthOfYear_max: Int_Filter
+}
+"""
+✨ Generated key input type for table 'RecurringEvent'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input RecurringEvent_Key {
+  """
+  ✨ Generated from Field `RecurringEvent`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `RecurringEvent`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'RecurringEvent'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input RecurringEvent_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: RecurringEvent_Filter
+}
+"""
+✨ Generated order input type for table 'RecurringEvent'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input RecurringEvent_Order {
+  """
+  ✨ Generated from Field `RecurringEvent`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `RecurringEvent`.`eventId` of type `UUID!`
+  """
+  eventId: OrderDirection
+  """
+  ✨ Generated from Field `RecurringEvent`.`event` of type `Event!`
+  """
+  event: Event_Order
+  """
+  ✨ Generated from Field `RecurringEvent`.`dayOfMonth` of type `Int`
+  """
+  dayOfMonth: OrderDirection
+  """
+  ✨ Generated from Field `RecurringEvent`.`endDate` of type `Timestamp`
+  """
+  endDate: OrderDirection
+  """
+  ✨ Generated from Field `RecurringEvent`.`frequency` of type `String!`
+  """
+  frequency: OrderDirection
+  """
+  ✨ Generated from Field `RecurringEvent`.`interval` of type `Int!`
+  """
+  interval: OrderDirection
+  """
+  ✨ Generated from Field `RecurringEvent`.`monthOfYear` of type `Int`
+  """
+  monthOfYear: OrderDirection
+}
+"""
+✨ Generated data input type for table 'Registration'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input Registration_Data {
+  """
+  ✨ Generated from Field `Registration`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Registration`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Registration`.`eventInstanceId` of type `UUID!`
+  """
+  eventInstanceId: UUID
+  """
+  ✨ `_expr` server value variant of `eventInstanceId` (✨ Generated from Field `Registration`.`eventInstanceId` of type `UUID!`)
+  """
+  eventInstanceId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Registration`.`userId` of type `UUID!`
+  """
+  userId: UUID
+  """
+  ✨ `_expr` server value variant of `userId` (✨ Generated from Field `Registration`.`userId` of type `UUID!`)
+  """
+  userId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Registration`.`eventInstance` of type `EventInstance!`
+  """
+  eventInstance: EventInstance_Key
+  """
+  ✨ Generated from Field `Registration`.`user` of type `User!`
+  """
+  user: User_Key
+  """
+  ✨ Generated from Field `Registration`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `Registration`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `Registration`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `Registration`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `Registration`.`registrationDate` of type `Date!`
+  """
+  registrationDate: Date
+  """
+  ✨ `_date` server value variant of `registrationDate` (✨ Generated from Field `Registration`.`registrationDate` of type `Date!`)
+  """
+  registrationDate_date: Date_Relative
+  """
+  ✨ `_expr` server value variant of `registrationDate` (✨ Generated from Field `Registration`.`registrationDate` of type `Date!`)
+  """
+  registrationDate_expr: Date_Expr
+  """
+  ✨ `_update` server value variant of `registrationDate` (✨ Generated from Field `Registration`.`registrationDate` of type `Date!`)
+  """
+  registrationDate_update: [Date_Update!]
+  """
+  ✨ Generated from Field `Registration`.`waitlist` of type `Boolean`
+  """
+  waitlist: Boolean
+  """
+  ✨ `_expr` server value variant of `waitlist` (✨ Generated from Field `Registration`.`waitlist` of type `Boolean`)
+  """
+  waitlist_expr: Boolean_Expr
+}
+"""
+✨ Generated filter input type for table 'Registration'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Registration_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [Registration_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: Registration_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [Registration_Filter!]
+  """
+  ✨ Generated from Field `Registration`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `Registration`.`eventInstanceId` of type `UUID!`
+  """
+  eventInstanceId: UUID_Filter
+  """
+  ✨ Generated from Field `Registration`.`userId` of type `UUID!`
+  """
+  userId: UUID_Filter
+  """
+  ✨ Generated from Field `Registration`.`eventInstance` of type `EventInstance!`
+  """
+  eventInstance: EventInstance_Filter
+  """
+  ✨ Generated from Field `Registration`.`user` of type `User!`
+  """
+  user: User_Filter
+  """
+  ✨ Generated from Field `Registration`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `Registration`.`registrationDate` of type `Date!`
+  """
+  registrationDate: Date_Filter
+  """
+  ✨ Generated from Field `Registration`.`waitlist` of type `Boolean`
+  """
+  waitlist: Boolean_Filter
+}
+"""
+✨ Generated first-row input type for table 'Registration'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input Registration_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [Registration_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: Registration_Filter
+}
+"""
+✨ Generated having input type for table 'Registration'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Registration_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [Registration_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: Registration_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [Registration_Having!]
+  """
+  ✨ Generated from Field `Registration`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `Registration`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `Registration`.`eventInstanceId_count` of type `Int!`
+  """
+  eventInstanceId_count: Int_Filter
+  """
+  ✨ Generated from Field `Registration`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `Registration`.`registrationDate_count` of type `Int!`
+  """
+  registrationDate_count: Int_Filter
+  """
+  ✨ Generated from Field `Registration`.`userId_count` of type `Int!`
+  """
+  userId_count: Int_Filter
+  """
+  ✨ Generated from Field `Registration`.`waitlist_count` of type `Int!`
+  """
+  waitlist_count: Int_Filter
+  """
+  ✨ Generated from Field `Registration`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `Registration`.`registrationDate_min` of type `Date`
+  """
+  registrationDate_min: Date_Filter
+  """
+  ✨ Generated from Field `Registration`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+  """
+  ✨ Generated from Field `Registration`.`registrationDate_max` of type `Date`
+  """
+  registrationDate_max: Date_Filter
+}
+"""
+✨ Generated key input type for table 'Registration'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input Registration_Key {
+  """
+  ✨ Generated from Field `Registration`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Registration`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'Registration'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input Registration_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: Registration_Filter
+}
+"""
+✨ Generated order input type for table 'Registration'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input Registration_Order {
+  """
+  ✨ Generated from Field `Registration`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `Registration`.`eventInstanceId` of type `UUID!`
+  """
+  eventInstanceId: OrderDirection
+  """
+  ✨ Generated from Field `Registration`.`userId` of type `UUID!`
+  """
+  userId: OrderDirection
+  """
+  ✨ Generated from Field `Registration`.`eventInstance` of type `EventInstance!`
+  """
+  eventInstance: EventInstance_Order
+  """
+  ✨ Generated from Field `Registration`.`user` of type `User!`
+  """
+  user: User_Order
+  """
+  ✨ Generated from Field `Registration`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `Registration`.`registrationDate` of type `Date!`
+  """
+  registrationDate: OrderDirection
+  """
+  ✨ Generated from Field `Registration`.`waitlist` of type `Boolean`
+  """
+  waitlist: OrderDirection
+}
+"""
+✨ Generated data input type for table 'User'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input User_Data {
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `User`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `User`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `User`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `User`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `User`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `User`.`displayName` of type `String!`
+  """
+  displayName: String
+  """
+  ✨ `_expr` server value variant of `displayName` (✨ Generated from Field `User`.`displayName` of type `String!`)
+  """
+  displayName_expr: String_Expr
+  """
+  ✨ Generated from Field `User`.`email` of type `String`
+  """
+  email: String
+  """
+  ✨ `_expr` server value variant of `email` (✨ Generated from Field `User`.`email` of type `String`)
+  """
+  email_expr: String_Expr
+  """
+  ✨ Generated from Field `User`.`photoUrl` of type `String`
+  """
+  photoUrl: String
+  """
+  ✨ `_expr` server value variant of `photoUrl` (✨ Generated from Field `User`.`photoUrl` of type `String`)
+  """
+  photoUrl_expr: String_Expr
+  """
+  ✨ Generated from Field `User`.`userId` of type `UUID!`
+  """
+  userId: UUID
+  """
+  ✨ `_expr` server value variant of `userId` (✨ Generated from Field `User`.`userId` of type `UUID!`)
+  """
+  userId_expr: UUID_Expr
+}
+"""
+✨ Generated filter input type for table 'User'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input User_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [User_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: User_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [User_Filter!]
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `User`.`displayName` of type `String!`
+  """
+  displayName: String_Filter
+  """
+  ✨ Generated from Field `User`.`email` of type `String`
+  """
+  email: String_Filter
+  """
+  ✨ Generated from Field `User`.`photoUrl` of type `String`
+  """
+  photoUrl: String_Filter
+  """
+  ✨ Generated from Field `User`.`userId` of type `UUID!`
+  """
+  userId: UUID_Filter
+  """
+  ✨ Generated from Field `User`.`events_on_creator` of type `[Event!]!`
+  """
+  events_on_creator: Event_ListFilter
+  """
+  ✨ Generated from Field `User`.`registrations_on_user` of type `[Registration!]!`
+  """
+  registrations_on_user: Registration_ListFilter
+}
+"""
+✨ Generated first-row input type for table 'User'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input User_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [User_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: User_Filter
+}
+"""
+✨ Generated having input type for table 'User'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input User_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [User_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: User_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [User_Having!]
+  """
+  ✨ Generated from Field `User`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`displayName_count` of type `Int!`
+  """
+  displayName_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`email_count` of type `Int!`
+  """
+  email_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`photoUrl_count` of type `Int!`
+  """
+  photoUrl_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`userId_count` of type `Int!`
+  """
+  userId_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+}
+"""
+✨ Generated key input type for table 'User'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input User_Key {
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `User`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'User'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input User_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: User_Filter
+}
+"""
+✨ Generated order input type for table 'User'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input User_Order {
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `User`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `User`.`displayName` of type `String!`
+  """
+  displayName: OrderDirection
+  """
+  ✨ Generated from Field `User`.`email` of type `String`
+  """
+  email: OrderDirection
+  """
+  ✨ Generated from Field `User`.`photoUrl` of type `String`
+  """
+  photoUrl: OrderDirection
+  """
+  ✨ Generated from Field `User`.`userId` of type `UUID!`
+  """
+  userId: OrderDirection
+}

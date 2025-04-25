@@ -1,0 +1,86 @@
+I0424 19:53:58.451250 2882121 load.go:37] Reloading schema and connectors...
+W0424 19:53:58.474877 2882121 control.go:60] [/emulator/fir-playground-fd073-service d96b] connector "default" has errors: connector/queries.gql:12: Unexpected )
+
+sources: connector/queries.gql [190B] 
+I0424 19:53:58.474911 2882121 control.go:71] [/emulator/fir-playground-fd073-service d96b] UpdateResources(): done
+Schema: sources: schema/schema.gql [774B] 
+Connector "default": sources: connector/queries.gql [190B] 
+E0424 19:53:58.475660 2882121 load.go:79] Could not load sources: <nil>
+I0424 19:53:58.475943 2882121 collector.go:107] schema extensions wrote into "/home/tiec/dev/random/firebase-playground/dataconnect/.dataconnect/schema"
+Generated sources: main/relation.gql [25552B] main/query.gql [6466B] main/mutation.gql [17535B] prelude.gql [69396B] main/implicit.gql [2576B] main/input.gql [44990B] 
+I0424 19:53:58.475954 2882121 load.go:80] Finished reloading
+I0424 19:53:58.476191 2882121 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50001
+I0424 19:53:58.674459 2882121 engine.go:170] [/emulator/fir-playground-fd073-service d96b] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+I0424 19:55:02.674310 2882121 engine.go:170] [/emulator/fir-playground-fd073-service d96b] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+I0424 19:55:27.321340 2882121 engine.go:170] [/emulator/fir-playground-fd073-service d96b] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+I0424 19:55:40.653803 2882121 load.go:37] Reloading schema and connectors...
+I0424 19:55:40.662682 2882121 control.go:71] [/emulator/fir-playground-fd073-service d96b] UpdateResources(): done
+Connector "default": sources: connector/queries.gql [289B] 
+I0424 19:55:40.682025 2882121 codegen.go:82] [connector "default" dartSdk] Generating sources into "/home/tiec/dev/random/firebase-playground/flutter/lib/dataconnect-generated/dart/default_connector"
+I0424 19:55:40.682048 2882121 dartgen.go:651] Started Dart code generation for connector default
+I0424 19:55:40.683296 2882121 collector.go:107] schema extensions wrote into "/home/tiec/dev/random/firebase-playground/dataconnect/.dataconnect/schema"
+Generated sources: prelude.gql [69396B] main/relation.gql [25552B] main/query.gql [6466B] main/mutation.gql [17535B] main/implicit.gql [2576B] main/input.gql [44990B] 
+I0424 19:55:40.683444 2882121 collector.go:107] connector "default" dartSdk wrote into "/home/tiec/dev/random/firebase-playground/flutter/lib/dataconnect-generated/dart/default_connector"
+Generated sources: get_users.dart [1941B] default.dart [723B] README.md [1899B] 
+I0424 19:55:40.683454 2882121 load.go:115] Finished reloading
+I0424 19:55:41.525313 2882121 engine.go:170] [/emulator/fir-playground-fd073-service d96b] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+I0424 19:55:52.246125 2882121 engine.go:170] [/emulator/fir-playground-fd073-service d96b] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+I0424 19:56:08.546791 2882121 engine.go:170] [/emulator/fir-playground-fd073-service d96b] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+I0424 19:56:27.528737 2882121 load.go:37] Reloading schema and connectors...
+I0424 19:56:27.538624 2882121 control.go:71] [/emulator/fir-playground-fd073-service d96b] UpdateResources(): done
+Connector "default": sources: connector/queries.gql [276B] 
+I0424 19:56:27.557000 2882121 codegen.go:82] [connector "default" dartSdk] Generating sources into "/home/tiec/dev/random/firebase-playground/flutter/lib/dataconnect-generated/dart/default_connector"
+I0424 19:56:27.557017 2882121 dartgen.go:651] Started Dart code generation for connector default
+I0424 19:56:27.559067 2882121 collector.go:107] schema extensions wrote into "/home/tiec/dev/random/firebase-playground/dataconnect/.dataconnect/schema"
+Generated sources: prelude.gql [69396B] main/relation.gql [25552B] main/query.gql [6466B] main/mutation.gql [17535B] main/implicit.gql [2576B] main/input.gql [44990B] 
+I0424 19:56:27.559201 2882121 collector.go:107] connector "default" dartSdk wrote into "/home/tiec/dev/random/firebase-playground/flutter/lib/dataconnect-generated/dart/default_connector"
+Generated sources: default.dart [891B] README.md [3089B] get_users.dart [2059B] get_user.dart [2989B] 
+I0424 19:56:27.559208 2882121 load.go:115] Finished reloading
+I0424 19:56:28.767006 2882121 engine.go:170] [/emulator/fir-playground-fd073-service d96b] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+I0424 19:56:37.555552 2882121 engine.go:170] [/emulator/fir-playground-fd073-service d96b] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+I0424 19:57:19.879404 2882121 engine.go:170] [/emulator/fir-playground-fd073-service d96b] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+I0424 20:00:47.872710 2882121 engine.go:170] [/emulator/fir-playground-fd073-service d96b] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+I0424 20:00:50.637133 2882121 engine.go:170] [/emulator/fir-playground-fd073-service d96b] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+I0424 20:03:16.181847 2882121 engine.go:170] [/emulator/fir-playground-fd073-service d96b] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+I0424 20:04:02.854577 2882121 engine.go:170] [/emulator/fir-playground-fd073-service d96b] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+I0424 20:05:05.196048 2882121 engine.go:170] [/emulator/fir-playground-fd073-service d96b] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+I0424 20:05:15.794959 2882121 engine.go:170] [/emulator/fir-playground-fd073-service d96b] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+I0424 20:05:17.511705 2882121 engine.go:170] [/emulator/fir-playground-fd073-service d96b] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+I0424 20:05:54.970291 2882121 engine.go:170] [/emulator/fir-playground-fd073-service d96b] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+I0424 20:05:58.958940 2882121 engine.go:170] [/emulator/fir-playground-fd073-service d96b] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+I0424 20:06:00.722700 2882121 engine.go:170] [/emulator/fir-playground-fd073-service d96b] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+I0424 20:06:02.551648 2882121 engine.go:170] [/emulator/fir-playground-fd073-service d96b] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+I0424 20:06:11.462763 2882121 engine.go:170] [/emulator/fir-playground-fd073-service d96b] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+I0424 20:09:52.563609 2882121 engine.go:170] [/emulator/fir-playground-fd073-service d96b] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+I0424 20:09:58.476718 2882121 load.go:37] Reloading schema and connectors...
+I0424 20:09:58.485913 2882121 control.go:71] [/emulator/fir-playground-fd073-service d96b] UpdateResources(): done
+Connector "default": sources: connector/queries.gql [305B] 
+I0424 20:09:58.505090 2882121 codegen.go:82] [connector "default" dartSdk] Generating sources into "/home/tiec/dev/random/firebase-playground/flutter/lib/dataconnect-generated/dart/default_connector"
+I0424 20:09:58.505110 2882121 dartgen.go:651] Started Dart code generation for connector default
+I0424 20:09:58.506629 2882121 collector.go:107] schema extensions wrote into "/home/tiec/dev/random/firebase-playground/dataconnect/.dataconnect/schema"
+Generated sources: main/relation.gql [25552B] main/query.gql [6466B] prelude.gql [69396B] main/mutation.gql [17535B] main/implicit.gql [2576B] main/input.gql [44990B] 
+I0424 20:09:58.506788 2882121 collector.go:107] connector "default" dartSdk wrote into "/home/tiec/dev/random/firebase-playground/flutter/lib/dataconnect-generated/dart/default_connector"
+Generated sources: get_users.dart [2059B] get_user.dart [2679B] default.dart [887B] README.md [3087B] 
+I0424 20:09:58.506795 2882121 load.go:115] Finished reloading
+I0424 20:09:59.538553 2882121 engine.go:170] [/emulator/fir-playground-fd073-service d96b] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+I0424 20:10:13.789385 2882121 engine.go:170] [/emulator/fir-playground-fd073-service d96b] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+I0424 20:10:29.042779 2882121 load.go:37] Reloading schema and connectors...
+I0424 20:10:29.052682 2882121 control.go:71] [/emulator/fir-playground-fd073-service d96b] UpdateResources(): done
+Connector "default": sources: connector/queries.gql [291B] 
+I0424 20:10:29.071717 2882121 codegen.go:82] [connector "default" dartSdk] Generating sources into "/home/tiec/dev/random/firebase-playground/flutter/lib/dataconnect-generated/dart/default_connector"
+I0424 20:10:29.071749 2882121 dartgen.go:651] Started Dart code generation for connector default
+I0424 20:10:29.073384 2882121 collector.go:107] schema extensions wrote into "/home/tiec/dev/random/firebase-playground/dataconnect/.dataconnect/schema"
+Generated sources: main/input.gql [44990B] main/relation.gql [25552B] main/query.gql [6466B] prelude.gql [69396B] main/mutation.gql [17535B] main/implicit.gql [2576B] 
+I0424 20:10:29.073513 2882121 collector.go:107] connector "default" dartSdk wrote into "/home/tiec/dev/random/firebase-playground/flutter/lib/dataconnect-generated/dart/default_connector"
+Generated sources: default.dart [887B] README.md [3087B] get_users.dart [1941B] get_user.dart [2561B] 
+I0424 20:10:29.073519 2882121 load.go:115] Finished reloading
+I0424 20:10:50.321829 2882121 load.go:37] Reloading schema and connectors...
+I0424 20:10:50.331346 2882121 control.go:71] [/emulator/fir-playground-fd073-service d96b] UpdateResources(): done
+Connector "default": sources: connector/queries.gql [290B] 
+I0424 20:10:50.350904 2882121 codegen.go:82] [connector "default" dartSdk] Generating sources into "/home/tiec/dev/random/firebase-playground/flutter/lib/dataconnect-generated/dart/default_connector"
+I0424 20:10:50.350927 2882121 dartgen.go:651] Started Dart code generation for connector default
+I0424 20:10:50.352526 2882121 collector.go:107] schema extensions wrote into "/home/tiec/dev/random/firebase-playground/dataconnect/.dataconnect/schema"
+Generated sources: main/relation.gql [25552B] main/query.gql [6466B] main/mutation.gql [17535B] prelude.gql [69396B] main/implicit.gql [2576B] main/input.gql [44990B] 
+I0424 20:10:50.352698 2882121 collector.go:107] connector "default" dartSdk wrote into "/home/tiec/dev/random/firebase-playground/flutter/lib/dataconnect-generated/dart/default_connector"
+Generated sources: get_users.dart [1941B] get_user.dart [2561B] default.dart [887B] README.md [3087B] 
+I0424 20:10:50.352707 2882121 load.go:115] Finished reloading

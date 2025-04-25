@@ -7,3 +7,13 @@ query GetUsers @auth(level: PUBLIC) {
     createdAt
   }
 }
+
+query GetUser($userId: UUID!) @auth(level: PUBLIC) {
+  user(first: {where: {userId: {eq: $userId}}}) {
+    userId
+    displayName
+    email
+    photoUrl
+    createdAt
+  }
+}

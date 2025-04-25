@@ -1,0 +1,562 @@
+extend type Mutation {
+  """
+  ✨ Insert a single `Event` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  event_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Event_Data!
+  ): Event_KeyOutput! @fdc_generated(from: "Event", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `EventInstance` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  eventInstance_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: EventInstance_Data!
+  ): EventInstance_KeyOutput! @fdc_generated(from: "EventInstance", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `RecurringEvent` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  recurringEvent_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: RecurringEvent_Data!
+  ): RecurringEvent_KeyOutput! @fdc_generated(from: "RecurringEvent", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `Registration` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  registration_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Registration_Data!
+  ): Registration_KeyOutput! @fdc_generated(from: "Registration", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `User` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  user_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: User_Data!
+  ): User_KeyOutput! @fdc_generated(from: "User", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert `Event` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  event_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Event_Data!]!
+  ): [Event_KeyOutput!]! @fdc_generated(from: "Event", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `EventInstance` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  eventInstance_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [EventInstance_Data!]!
+  ): [EventInstance_KeyOutput!]! @fdc_generated(from: "EventInstance", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `RecurringEvent` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  recurringEvent_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [RecurringEvent_Data!]!
+  ): [RecurringEvent_KeyOutput!]! @fdc_generated(from: "RecurringEvent", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `Registration` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  registration_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Registration_Data!]!
+  ): [Registration_KeyOutput!]! @fdc_generated(from: "Registration", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `User` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  user_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [User_Data!]!
+  ): [User_KeyOutput!]! @fdc_generated(from: "User", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert or update a single `Event` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Event`.
+  """
+  event_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Event_Data!
+  ): Event_KeyOutput! @fdc_generated(from: "Event", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `EventInstance` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `EventInstance`.
+  """
+  eventInstance_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: EventInstance_Data!
+  ): EventInstance_KeyOutput! @fdc_generated(from: "EventInstance", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `RecurringEvent` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `RecurringEvent`.
+  """
+  recurringEvent_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: RecurringEvent_Data!
+  ): RecurringEvent_KeyOutput! @fdc_generated(from: "RecurringEvent", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `Registration` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Registration`.
+  """
+  registration_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Registration_Data!
+  ): Registration_KeyOutput! @fdc_generated(from: "Registration", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `User` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `User`.
+  """
+  user_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: User_Data!
+  ): User_KeyOutput! @fdc_generated(from: "User", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update `Event` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Event`.
+  """
+  event_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Event_Data!]!
+  ): [Event_KeyOutput!]! @fdc_generated(from: "Event", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `EventInstance` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `EventInstance`.
+  """
+  eventInstance_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [EventInstance_Data!]!
+  ): [EventInstance_KeyOutput!]! @fdc_generated(from: "EventInstance", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `RecurringEvent` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `RecurringEvent`.
+  """
+  recurringEvent_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [RecurringEvent_Data!]!
+  ): [RecurringEvent_KeyOutput!]! @fdc_generated(from: "RecurringEvent", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `Registration` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Registration`.
+  """
+  registration_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Registration_Data!]!
+  ): [Registration_KeyOutput!]! @fdc_generated(from: "Registration", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `User` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `User`.
+  """
+  user_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [User_Data!]!
+  ): [User_KeyOutput!]! @fdc_generated(from: "User", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Update a single `Event` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Event` or `null` if not found.
+  """
+  event_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Event_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Event_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Event_Data!
+  ): Event_KeyOutput @fdc_generated(from: "Event", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `EventInstance` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `EventInstance` or `null` if not found.
+  """
+  eventInstance_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: EventInstance_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: EventInstance_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: EventInstance_Data!
+  ): EventInstance_KeyOutput @fdc_generated(from: "EventInstance", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `RecurringEvent` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `RecurringEvent` or `null` if not found.
+  """
+  recurringEvent_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: RecurringEvent_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: RecurringEvent_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: RecurringEvent_Data!
+  ): RecurringEvent_KeyOutput @fdc_generated(from: "RecurringEvent", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `Registration` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Registration` or `null` if not found.
+  """
+  registration_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Registration_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Registration_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Registration_Data!
+  ): Registration_KeyOutput @fdc_generated(from: "Registration", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `User` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `User` or `null` if not found.
+  """
+  user_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: User_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: User_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: User_Data!
+  ): User_KeyOutput @fdc_generated(from: "User", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update `Event` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  event_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Event_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Event_Data!
+  ): Int! @fdc_generated(from: "Event", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `EventInstance` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  eventInstance_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: EventInstance_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: EventInstance_Data!
+  ): Int! @fdc_generated(from: "EventInstance", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `RecurringEvent` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  recurringEvent_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: RecurringEvent_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: RecurringEvent_Data!
+  ): Int! @fdc_generated(from: "RecurringEvent", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `Registration` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  registration_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Registration_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Registration_Data!
+  ): Int! @fdc_generated(from: "Registration", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `User` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  user_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: User_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: User_Data!
+  ): Int! @fdc_generated(from: "User", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Delete a single `Event` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  event_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Event_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Event_FirstRow
+  ): Event_KeyOutput @fdc_generated(from: "Event", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `EventInstance` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  eventInstance_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: EventInstance_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: EventInstance_FirstRow
+  ): EventInstance_KeyOutput @fdc_generated(from: "EventInstance", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `RecurringEvent` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  recurringEvent_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: RecurringEvent_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: RecurringEvent_FirstRow
+  ): RecurringEvent_KeyOutput @fdc_generated(from: "RecurringEvent", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `Registration` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  registration_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Registration_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Registration_FirstRow
+  ): Registration_KeyOutput @fdc_generated(from: "Registration", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `User` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  user_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: User_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: User_FirstRow
+  ): User_KeyOutput @fdc_generated(from: "User", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete `Event` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  event_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Event_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Event", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `EventInstance` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  eventInstance_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: EventInstance_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "EventInstance", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `RecurringEvent` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  recurringEvent_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: RecurringEvent_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "RecurringEvent", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `Registration` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  registration_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Registration_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Registration", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `User` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  user_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: User_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "User", purpose: DELETE_MULTIPLE)
+}
