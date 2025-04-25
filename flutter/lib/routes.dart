@@ -28,7 +28,7 @@ final GoRouter router = GoRouter(
             GoRoute(
               path: '/users',
               builder: (context, state) {
-                var id = state..pathParameters['id'];
+                var id = state.uri.queryParameters['id'];
                 if (id == null) {
                   return UserListPage();
                 } else {
