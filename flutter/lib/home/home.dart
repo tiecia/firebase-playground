@@ -6,83 +6,127 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<ScheduledItem> items = [
-      ScheduledItem(
-        from: DateTime.now(),
-        startTimeZone: "America/Los_Angeles",
-        to: DateTime.now().add(Duration(hours: 1)),
-        endTimeZone: "America/Los_Angeles",
-      ),
-    ];
-
     return Scaffold(
       appBar: AppBar(title: Text("Home")),
-      body: SfCalendar(
-        showNavigationArrow: true,
-        showTodayButton: true,
-        showDatePickerButton: true,
-        dataSource: MeetingDataSource(items),
-      ),
+      body: CalendarPartial(),
     );
   }
 }
 
-class ScheduledItem {
-  ScheduledItem({
-    required this.from,
-    required this.startTimeZone,
-    required this.to,
-    required this.endTimeZone,
-    this.eventName = "New Item",
-    this.background = Colors.blue,
-  });
+class CalendarPartial extends StatefulWidget {
+  const CalendarPartial({super.key});
 
-  String eventName;
-  DateTime from;
-  String startTimeZone;
-  DateTime to;
-  String endTimeZone;
-  bool isAllDay = false;
-  Color background;
+  @override
+  State<CalendarPartial> createState() => _CalendarPartialState();
 }
 
-class MeetingDataSource extends CalendarDataSource {
-  MeetingDataSource(List<ScheduledItem> source) {
-    appointments = source;
+class _CalendarPartialState extends State<CalendarPartial> {
+  void _onTap(CalendarTapDetails tapDetails) {
+    var tappedAppointemnts = tapDetails.appointments;
+    var tappedDate = tapDetails.date;
+
+    if (tappedAppointemnts != null && tappedAppointemnts.isNotEmpty) {
+      _showBottomSheet(
+        AppointmentViewPartial(appointment: tappedAppointemnts.first),
+      );
+      return;
+    }
   }
 
-  @override
-  DateTime getStartTime(int index) {
-    return appointments![index].from;
+  void _longPress(CalendarLongPressDetails pressDetails) {
+    var pressedAppointments = pressDetails.appointments;
+    var pressedDate = pressDetails.date;
+
+    if (pressedAppointments != null && pressedAppointments.isNotEmpty) {
+      return;
+    }
+
+    if (pressedDate != null) {
+      _createNewAppointment(pressedDate);
+    }
   }
 
-  @override
-  DateTime getEndTime(int index) {
-    return appointments![index].to;
+  void _createNewAppointment(DateTime start) {
+    var newAppointment = Appointment(
+      subject: "New Appointment",
+      startTime: start,
+      endTime: start.add(Duration(hours: 1)),
+    );
+
+    _dataSource.appointments!.add(newAppointment);
+    _dataSource.notifyListeners(CalendarDataSourceAction.add, [newAppointment]);
   }
 
-  @override
-  bool isAllDay(int index) {
-    return appointments![index].isAllDay;
+  void _showBottomSheet(Widget child) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                IconButton(
+                  icon: Icon(Icons.close),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+              ],
+            ),
+            child,
+          ],
+        );
+      },
+    );
   }
 
-  @override
-  String getSubject(int index) {
-    return appointments![index].eventName;
-  }
+  final AppointmentDataSource _dataSource = AppointmentDataSource();
 
   @override
-  String getStartTimeZone(int index) {
-    return appointments![index].startTimeZone;
+  Widget build(BuildContext context) {
+    return SfCalendar(
+      showNavigationArrow: true,
+      showTodayButton: true,
+      showDatePickerButton: true,
+      allowViewNavigation: true,
+      allowedViews: [
+        CalendarView.day,
+        CalendarView.week,
+        CalendarView.workWeek,
+        CalendarView.month,
+      ],
+      onTap: _onTap,
+      onLongPress: _longPress,
+      dataSource: _dataSource,
+    );
   }
+}
+
+class AppointmentViewPartial extends StatelessWidget {
+  final Appointment appointment;
+  const AppointmentViewPartial({super.key, required this.appointment});
 
   @override
-  String getEndTimeZone(int index) {
-    return appointments![index].endTimeZone;
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text(appointment.subject),
+        Text(appointment.startTime.toString()),
+        Text(appointment.endTime.toString()),
+      ],
+    );
   }
+}
 
-  @override
-  Color getColor(int index) {
-    return appointments![index].background;
+class AppointmentDataSource extends CalendarDataSource {
+  AppointmentDataSource() {
+    appointments = [
+      Appointment(
+        startTime: DateTime.now(),
+        endTime: DateTime.now().add(Duration(hours: 1)),
+        subject: "New appointment",
+      ),
+    ];
   }
 }
