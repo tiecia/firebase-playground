@@ -1,3 +1,4 @@
 .direnv
 .firebase
 .vscode
+./dataconnect/.dataconnect
