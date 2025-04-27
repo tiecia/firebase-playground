@@ -6,6 +6,10 @@ part 'get_users.dart';
 
 part 'get_user.dart';
 
+part 'get_events.dart';
+
+part 'create_event.dart';
+
 
 
 
@@ -22,6 +26,16 @@ class DefaultConnector {
   
   GetUserVariablesBuilder getUser ({required String userId, }) {
     return GetUserVariablesBuilder(dataConnect, userId: userId,);
+  }
+  
+  
+  GetEventsVariablesBuilder getEvents () {
+    return GetEventsVariablesBuilder(dataConnect, );
+  }
+  
+  
+  CreateEventVariablesBuilder createEvent ({required String subject, }) {
+    return CreateEventVariablesBuilder(dataConnect, subject: subject,);
   }
   
 

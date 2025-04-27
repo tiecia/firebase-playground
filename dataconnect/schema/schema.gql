@@ -7,26 +7,13 @@ type User @table {
 }
 
 type Event @table {
-  creator: User!
-  title: String!
+  subject: String!
   description: String
   startTime: Timestamp!
   endTime: Timestamp!
   location: String
-  isRecurring: Boolean!
-  isRegisterable: Boolean!
-  maxRegistrants: Int
+  recurrenceRule: String
   createdAt: Timestamp!
-}
-
-type RecurringEvent @table {
-  event: Event!
-  frequency: String!
-  interval: Int!
-  daysOfWeek: [String]
-  dayOfMonth: Int
-  monthOfYear: Int
-  endDate: Timestamp
 }
 
 type EventInstance @table {
