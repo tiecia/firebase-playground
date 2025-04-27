@@ -3,3 +3,5 @@
 .vscode
 ./dataconnect/.dataconnect
 dataconnect-debug.log
+
+dataconnect/.dataconnect/
