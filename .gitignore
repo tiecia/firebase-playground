@@ -2,3 +2,4 @@
 .firebase
 .vscode
 ./dataconnect/.dataconnect
+dataconnect-debug.log
