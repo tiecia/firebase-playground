@@ -26,8 +26,10 @@ class MyApp extends StatelessWidget {
               "Error connecting to Firebase",
               textDirection: TextDirection.ltr,
             );
-          } else {
+          } else if (snapshot.hasData) {
             return MaterialApp.router(routerConfig: router);
+          } else {
+            return Center(child: CircularProgressIndicator());
           }
         },
       ),

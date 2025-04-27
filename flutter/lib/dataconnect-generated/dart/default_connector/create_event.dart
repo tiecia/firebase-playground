@@ -3,21 +3,13 @@ part of 'default.dart';
 class CreateEventVariablesBuilder {
   String subject;
   Optional<String> _description = Optional.optional(nativeFromJson, nativeToJson);
-  Optional<Timestamp> _startTime = Optional.optional((json) => json['startTime'] = Timestamp.fromJson(json['startTime']), defaultSerializer);
-  Optional<Timestamp> _endTime = Optional.optional((json) => json['endTime'] = Timestamp.fromJson(json['endTime']), defaultSerializer);
+  Timestamp startTime;
+  Timestamp endTime;
   Optional<String> _location = Optional.optional(nativeFromJson, nativeToJson);
   Optional<String> _recurrenceRule = Optional.optional(nativeFromJson, nativeToJson);
 
   final FirebaseDataConnect _dataConnect;  CreateEventVariablesBuilder description(String? t) {
    _description.value = t;
-   return this;
-  }
-  CreateEventVariablesBuilder startTime(Timestamp? t) {
-   _startTime.value = t;
-   return this;
-  }
-  CreateEventVariablesBuilder endTime(Timestamp? t) {
-   _endTime.value = t;
    return this;
   }
   CreateEventVariablesBuilder location(String? t) {
@@ -29,7 +21,7 @@ class CreateEventVariablesBuilder {
    return this;
   }
 
-  CreateEventVariablesBuilder(this._dataConnect, {required  this.subject,});
+  CreateEventVariablesBuilder(this._dataConnect, {required  this.subject,required  this.startTime,required  this.endTime,});
   Deserializer<CreateEventData> dataDeserializer = (dynamic json)  => CreateEventData.fromJson(jsonDecode(json));
   Serializer<CreateEventVariables> varsSerializer = (CreateEventVariables vars) => jsonEncode(vars.toJson());
   Future<OperationResult<CreateEventData, CreateEventVariables>> execute() {
@@ -37,7 +29,7 @@ class CreateEventVariablesBuilder {
   }
 
   MutationRef<CreateEventData, CreateEventVariables> ref() {
-    CreateEventVariables vars= CreateEventVariables(subject: subject,description: _description,startTime: _startTime,endTime: _endTime,location: _location,recurrenceRule: _recurrenceRule,);
+    CreateEventVariables vars= CreateEventVariables(subject: subject,description: _description,startTime: startTime,endTime: endTime,location: _location,recurrenceRule: _recurrenceRule,);
     return _dataConnect.mutation("CreateEvent", dataDeserializer, varsSerializer, vars);
   }
 }
@@ -77,22 +69,16 @@ class CreateEventData {
 class CreateEventVariables {
   String subject;
   late Optional<String>description;
-  late Optional<Timestamp>startTime;
-  late Optional<Timestamp>endTime;
+  Timestamp startTime;
+  Timestamp endTime;
   late Optional<String>location;
   late Optional<String>recurrenceRule;
   @Deprecated('fromJson is deprecated for Variable classes as they are no longer required for deserialization.')
   CreateEventVariables.fromJson(Map<String, dynamic> json):
-  subject = nativeFromJson<String>(json['subject']) {
+  subject = nativeFromJson<String>(json['subject']),startTime = Timestamp.fromJson(json['startTime']),endTime = Timestamp.fromJson(json['endTime']) {
   
     description = Optional.optional(nativeFromJson, nativeToJson);
     description.value = json['description'] == null ? null : nativeFromJson<String>(json['description']);
-  
-    startTime = Optional.optional((json) => json['startTime'] = Timestamp.fromJson(json['startTime']), defaultSerializer);
-    startTime.value = json['startTime'] == null ? null : Timestamp.fromJson(json['startTime']);
-  
-    endTime = Optional.optional((json) => json['endTime'] = Timestamp.fromJson(json['endTime']), defaultSerializer);
-    endTime.value = json['endTime'] == null ? null : Timestamp.fromJson(json['endTime']);
   
     location = Optional.optional(nativeFromJson, nativeToJson);
     location.value = json['location'] == null ? null : nativeFromJson<String>(json['location']);
@@ -108,12 +94,8 @@ class CreateEventVariables {
     if(description.state == OptionalState.set) {
       json['description'] = description.toJson();
     }
-    if(startTime.state == OptionalState.set) {
-      json['startTime'] = startTime.toJson();
-    }
-    if(endTime.state == OptionalState.set) {
-      json['endTime'] = endTime.toJson();
-    }
+    json['startTime'] = startTime.toJson();
+    json['endTime'] = endTime.toJson();
     if(location.state == OptionalState.set) {
       json['location'] = location.toJson();
     }

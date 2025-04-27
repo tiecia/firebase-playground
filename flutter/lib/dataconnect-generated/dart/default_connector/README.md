@@ -21,6 +21,47 @@ DefaultConnector.instance.dataConnect.useDataConnectEmulator(host, port);
 You can also call queries and mutations by using the connector class.
 ## Queries
 
+### GetEvents
+#### Required Arguments
+```dart
+// No required arguments
+DefaultConnector.instance.getEvents().execute();
+```
+
+
+
+#### Return Type
+`execute()` returns a `QueryResult<GetEventsData, void>`
+```dart
+/// Result of an Operation Request (query/mutation).
+class OperationResult<Data, Variables> {
+  OperationResult(this.dataConnect, this.data, this.ref);
+  Data data;
+  OperationRef<Data, Variables> ref;
+  FirebaseDataConnect dataConnect;
+}
+
+/// Result of a query request. Created to hold extra variables in the future.
+class QueryResult<Data, Variables> extends OperationResult<Data, Variables> {
+  QueryResult(super.dataConnect, super.data, super.ref);
+}
+
+final result = await DefaultConnector.instance.getEvents();
+GetEventsData data = result.data;
+final ref = result.ref;
+```
+
+#### Getting the Ref
+Each builder returns an `execute` function, which is a helper function that creates a `Ref` object, and executes the underlying operation.
+An example of how to use the `Ref` object is shown below:
+```dart
+final ref = DefaultConnector.instance.getEvents().ref();
+ref.execute();
+
+ref.subscribe(...);
+```
+
+
 ### GetUsers
 #### Required Arguments
 ```dart
@@ -110,55 +151,18 @@ ref.execute();
 ref.subscribe(...);
 ```
 
-
-### GetEvents
-#### Required Arguments
-```dart
-// No required arguments
-DefaultConnector.instance.getEvents().execute();
-```
-
-
-
-#### Return Type
-`execute()` returns a `QueryResult<GetEventsData, void>`
-```dart
-/// Result of an Operation Request (query/mutation).
-class OperationResult<Data, Variables> {
-  OperationResult(this.dataConnect, this.data, this.ref);
-  Data data;
-  OperationRef<Data, Variables> ref;
-  FirebaseDataConnect dataConnect;
-}
-
-/// Result of a query request. Created to hold extra variables in the future.
-class QueryResult<Data, Variables> extends OperationResult<Data, Variables> {
-  QueryResult(super.dataConnect, super.data, super.ref);
-}
-
-final result = await DefaultConnector.instance.getEvents();
-GetEventsData data = result.data;
-final ref = result.ref;
-```
-
-#### Getting the Ref
-Each builder returns an `execute` function, which is a helper function that creates a `Ref` object, and executes the underlying operation.
-An example of how to use the `Ref` object is shown below:
-```dart
-final ref = DefaultConnector.instance.getEvents().ref();
-ref.execute();
-
-ref.subscribe(...);
-```
-
 ## Mutations
 
 ### CreateEvent
 #### Required Arguments
 ```dart
 String subject = ...;
+Timestamp startTime = ...;
+Timestamp endTime = ...;
 DefaultConnector.instance.createEvent(
   subject: subject,
+  startTime: startTime,
+  endTime: endTime,
 ).execute();
 ```
 
@@ -170,14 +174,6 @@ class CreateEventVariablesBuilder {
   ...
    CreateEventVariablesBuilder description(String? t) {
    _description.value = t;
-   return this;
-  }
-  CreateEventVariablesBuilder startTime(Timestamp? t) {
-   _startTime.value = t;
-   return this;
-  }
-  CreateEventVariablesBuilder endTime(Timestamp? t) {
-   _endTime.value = t;
    return this;
   }
   CreateEventVariablesBuilder location(String? t) {
@@ -193,10 +189,10 @@ class CreateEventVariablesBuilder {
 }
 DefaultConnector.instance.createEvent(
   subject: subject,
+  startTime: startTime,
+  endTime: endTime,
 )
 .description(description)
-.startTime(startTime)
-.endTime(endTime)
 .location(location)
 .recurrenceRule(recurrenceRule)
 .execute();
@@ -215,6 +211,8 @@ class OperationResult<Data, Variables> {
 
 final result = await DefaultConnector.instance.createEvent(
   subject: subject,
+  startTime: startTime,
+  endTime: endTime,
 );
 CreateEventData data = result.data;
 final ref = result.ref;
@@ -225,9 +223,13 @@ Each builder returns an `execute` function, which is a helper function that crea
 An example of how to use the `Ref` object is shown below:
 ```dart
 String subject = ...;
+Timestamp startTime = ...;
+Timestamp endTime = ...;
 
 final ref = DefaultConnector.instance.createEvent(
   subject: subject,
+  startTime: startTime,
+  endTime: endTime,
 ).ref();
 ref.execute();
 ```

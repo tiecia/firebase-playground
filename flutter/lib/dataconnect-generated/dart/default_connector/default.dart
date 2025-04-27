@@ -2,13 +2,13 @@ library default_connector;
 import 'package:firebase_data_connect/firebase_data_connect.dart';
 import 'dart:convert';
 
-part 'get_users.dart';
-
-part 'get_user.dart';
-
 part 'get_events.dart';
 
 part 'create_event.dart';
+
+part 'get_users.dart';
+
+part 'get_user.dart';
 
 
 
@@ -19,6 +19,16 @@ part 'create_event.dart';
 class DefaultConnector {
   
   
+  GetEventsVariablesBuilder getEvents () {
+    return GetEventsVariablesBuilder(dataConnect, );
+  }
+  
+  
+  CreateEventVariablesBuilder createEvent ({required String subject, required Timestamp startTime, required Timestamp endTime, }) {
+    return CreateEventVariablesBuilder(dataConnect, subject: subject,startTime: startTime,endTime: endTime,);
+  }
+  
+  
   GetUsersVariablesBuilder getUsers () {
     return GetUsersVariablesBuilder(dataConnect, );
   }
@@ -26,16 +36,6 @@ class DefaultConnector {
   
   GetUserVariablesBuilder getUser ({required String userId, }) {
     return GetUserVariablesBuilder(dataConnect, userId: userId,);
-  }
-  
-  
-  GetEventsVariablesBuilder getEvents () {
-    return GetEventsVariablesBuilder(dataConnect, );
-  }
-  
-  
-  CreateEventVariablesBuilder createEvent ({required String subject, }) {
-    return CreateEventVariablesBuilder(dataConnect, subject: subject,);
   }
   
 
